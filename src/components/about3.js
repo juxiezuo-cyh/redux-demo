@@ -1,9 +1,11 @@
 import React from 'react'
-import { connect } from '../utils/connect.js';
+// import { connect } from '../utils/connect.js';
+import { connect } from 'react-redux';
 import { actions } from '../store/actionCreators';
 
 const About = (props) => {
   console.log('About渲染了')
+  
   const { counters, addFun } = props;
   
   return (
@@ -17,14 +19,14 @@ const About = (props) => {
 
       <button onClick={addFun(1)}>+1</button>
       <br/>
-      <button onClick={() => {addFun(5);console.log(counters)}}>+5</button>
+      <button onClick={() => {addFun(5);}}>+5</button>
     </div>
   )
 }
 
 const mapStateToProps = state => {
   return {
-    counters: state.counter
+    counters: state.counters
   }
 };
 
